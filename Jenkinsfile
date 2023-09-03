@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    label 'Maven-Build-Env' // Use the Maven slave node for this pipeline
+    label 'maven-build-env' // Use the Maven slave node for this pipeline
   }
   stages {
     stage('Validate Project') {
@@ -32,8 +32,8 @@ pipeline {
         steps {
             sh  """mvn sonar:sonar \
                    -Dsonar.projectKey=Maven-JavaWebApp \
-                   -Dsonar.host.url=http://172.31.5.173:9000 \
-                   -Dsonar.login=ed7f1ae74cf8b693cadbd47043d4b9ed5ef50913"""
+                   -Dsonar.host.url=http://172.31.25.97:9000 \
+                   -Dsonar.login=15c6100346093a262e8d0bd3355ab9b239f0312b"""
         }
     }
     stage("Upload Artifact To Nexus"){
